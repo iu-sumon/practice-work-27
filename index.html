@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-4xl text-center p-10  text-indigo-900 font-semibold drop-shadow-md bg-lime-300">Calculation
+            Double And Triple</h1>
+    </header>
+    <section>
+        <div class="p-8">
+            <input id="input-field"
+                class="focus:outline-none  text-center p-5 block mx-auto p-5 w-1/4 rounded-full drop-shadow-md"
+                type="text" placeholder="Please enter Number">
+            <button id="double-btn"
+                class="bg-purple-600 hover:bg-green-300 block mx-auto mt-5 px-8 py-2 rounded-full text-white drop-shadow-md ">
+                Double
+            </button>
+            <button id="triple-btn"
+                class="bg-purple-600 hover:bg-green-300 block mx-auto  mt-5 px-10 py-2 rounded-full text-white drop-shadow-md">
+                Triple
+            </button>
+        </div>
+    </section>
+
+    <section>
+        <div class="bg-cyan-400 w-2/4 mx-auto pb-8 my-5 rounded-2xl drop-shadow-lg">
+            <h1 class="text-3xl  text-center pb-8 my-5 text-indigo-900 font-semibold ">Output</h1>
+            <h1 class="text-3xl  text-center pb-8 my-5 text-indigo-900 font-semibold"><span id="output-field"></span>
+            </h1>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('double-btn').addEventListener('click', function () {
+
+            const inputField = document.getElementById('input-field');
+            const previousValue = parseFloat(inputField.value);
+            inputField.value = '';
+            if (isNaN(previousValue)) {
+                alert('Please enter a number');
+            }
+            else {
+                const result = previousValue * 2;
+                const outputField = document.getElementById('output-field');
+                const previousOutputValue = outputField.innerText;
+                outputField.innerText = result;
+            }
+
+        })
+        document.getElementById('triple-btn').addEventListener('click', function () {
+
+            const inputField = document.getElementById('input-field');
+            const previousValue = parseFloat(inputField.value);
+            inputField.value = '';
+            if (isNaN(previousValue)) {
+                alert('Please enter a number');
+            }
+            else {
+                const result = previousValue * 3;
+                const outputField = document.getElementById('output-field');
+                const previousOutputValue = outputField.innerText;
+                outputField.innerText = result;
+            }
+        })
+
+    </script>
+
+    <footer class="bg-purple-600 mt-8  w-1/4 mx-auto rounded">
+        <h1 class="text-center">©2022.Md. Sumon Mia. All rights reserved.</h1>
+    </footer>
+</body>
+
+</html>
